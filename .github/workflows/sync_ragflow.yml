@@ -5,7 +5,10 @@ on:
     branches:
       - main
     paths:
-      - "approved/**"   # Only triggers when files inside approved/ change
+      - "approved/**"
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # ← opt into Node.js 24 now
 
 jobs:
   sync:
@@ -13,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2          # ← latest v4 with Node 24 support
 
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0      # ← latest v5 with Node 24 support
         with:
           python-version: "3.12"
 
