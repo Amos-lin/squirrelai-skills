@@ -9,9 +9,9 @@ from ragflow_sdk import RAGFlow
 
 # ── Config ──────────────────────────────────────────────────────────
 GITHUB_TOKEN    = os.environ["GITHUB_TOKEN"]       # GitHub PAT
-RAGFLOW_API_KEY = os.environ["RAGFLOW_API_KEY"]    # RAGFlow API key
-RAGFLOW_BASE_URL = os.environ.get("RAGFLOW_BASE_URL", "http://localhost:8088")
-REPO_NAME       = "Amos-Lin/squirrelai-skills"
+RAGFLOW_API_KEY = os.environ.get("RAGFLOW_API_KEY","ragflow-YVYdLdNalUCxSOxKaaf-2HLPW6R2nRofyPuQxljKIWo")    # RAGFlow API key
+RAGFLOW_BASE_URL = os.environ.get("RAGFLOW_BASE_URL", "https://singh-acrobat-bundle-steel.trycloudflare.com")
+REPO_NAME       = "Amos-lin/squirrelai-skills"
 APPROVED_PATH   = "approved"
 DATASET_NAME    = "销冠 Skill 库"
 # ────────────────────────────────────────────────────────────────────
