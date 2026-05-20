@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SkillSchema",
+  "type": "object",
+  "required": ["skill_id", "category", "title", "content", "tags"],
+  "properties": {
+    "skill_id":  { "type": "string" },
+    "category":  { "type": "string" },
+    "title":     { "type": "string" },
+    "content":   { "type": "string" },
+    "tags":      { "type": "array", "items": { "type": "string" } },
+    "version":   { "type": "string" },
+    "status":    { "type": "string", "enum": ["draft", "approved", "deprecated"] }
+  }
+}
