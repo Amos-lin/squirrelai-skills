@@ -1,0 +1,31 @@
+name: Sync Approved Skills to RAGFlow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "approved/**"   # Only triggers when files inside approved/ change
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install ragflow-sdk PyGithub requests
+
+      - name: Run sync script
+        run: python scripts/sync_to_ragflow.py
+        env:
+          GITHUB_TOKEN:     ${{ secrets.GITHUB_TOKEN }}
+          RAGFLOW_API_KEY:  ${{ secrets.RAGFLOW_API_KEY }}
+          RAGFLOW_BASE_URL: ${{ secrets.RAGFLOW_BASE_URL }}
